@@ -1,23 +1,17 @@
 import logo from './logo.svg';
-import './App.css';
+
+import teams from './teams.json'
+import TeamInfo from './Components/TeamInfo';
+import './Styles/style-teams.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>Football Teams</h1>
+      <div className="row mb-2">
+        {teams.map(team => <TeamInfo team={team} />)}
+      </div>
+      
     </div>
   );
 }
